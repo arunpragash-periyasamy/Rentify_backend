@@ -12,7 +12,7 @@ const signup = async (req, res) => {
         res.status(201).send("user created successfully");
     } catch (err) {
         console.log("Error occured");
-        console.log(err)
+        console.log(err);
         res.status(500).send(err)
     }
 }

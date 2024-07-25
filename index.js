@@ -6,7 +6,6 @@ const dbConnection = require("./db/conn");
 const handleFileUpload = require("./utils/fileUploads");
 require("dotenv").config();
 
-
 // Routes
 const authRoute = require("./Routes/auth");
 const houseRoute = require("./Routes/house");
@@ -26,15 +25,13 @@ const keyMappings = {
   images: 'images',
 };
 
-app.post('/test', handleFileUpload('uploads/test', 'image', keyMappings), (req, res) => {
-    console.log(req.body)
-  res.send(req.body);
+app.get('/test/:fileName', (req, res) => {
+  res.send("testing")
 });
 
 // app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    console.log()
     res.send("Hello from Rentify backend");
 })
 

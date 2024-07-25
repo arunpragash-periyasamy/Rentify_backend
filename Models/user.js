@@ -32,6 +32,7 @@ const userSchema = new Schema({
     },
     userType: {
         type: String,
+        enum: ['houseOwner', 'tenant', 'admin'],
         required: true
     }
 })
